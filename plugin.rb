@@ -29,13 +29,8 @@
        def user_params
          merge_fields = {ip_address: request.ip}
          merge_fields.merge!(active: true) if SiteSetting.disable_email_verification
-         params.permit(
-           :name,
-           :email,
-           :password,
-           :username,
-           :wedding_date,
-         ).merge(merge_fields)
+         params.permit!
+         params.merge(merge_fields)
        end
      end
    end
