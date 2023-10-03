@@ -1,0 +1,4 @@
+users:
+  disable_email_verification:
+    client: true
+    default: false
